@@ -33,6 +33,7 @@
             btnEnviar = new Button();
             label2 = new Label();
             lblNumeroCodi = new Label();
+            lblErrorInput = new Label();
             SuspendLayout();
             // 
             // label1
@@ -79,11 +80,21 @@
             lblNumeroCodi.Size = new Size(0, 15);
             lblNumeroCodi.TabIndex = 4;
             // 
+            // lblErrorInput
+            // 
+            lblErrorInput.AutoSize = true;
+            lblErrorInput.ForeColor = Color.Red;
+            lblErrorInput.Location = new Point(281, 66);
+            lblErrorInput.Name = "lblErrorInput";
+            lblErrorInput.Size = new Size(0, 15);
+            lblErrorInput.TabIndex = 5;
+            // 
             // Hamming
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblErrorInput);
             Controls.Add(lblNumeroCodi);
             Controls.Add(label2);
             Controls.Add(btnEnviar);
@@ -102,5 +113,6 @@
         private Button btnEnviar;
         private Label label2;
         private Label lblNumeroCodi;
+        private Label lblErrorInput;
     }
 }
