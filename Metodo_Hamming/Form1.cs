@@ -5,130 +5,8 @@ namespace Metodo_Hamming
     public partial class Form1 : Form
     {
         public string seleccion = "";
-        public bool signo = false;
-        public bool validarTexto(KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-                return true;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-                return true;
-            }
-            else if (e.KeyChar == ' ')
-            {
-                e.Handled = false;
-                return true;
-            }
-            else
-            {
-                e.Handled = true;
-                MessageBox.Show("Ingrese solo letras");
-                return false;
-            }
-        }
-        public bool validarNumerosFlotantes(KeyPressEventArgs e, string cadena)
-        {
-            if (char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-                return true;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-                return true;
-            }
-            else if (e.KeyChar == '.')
-            {
-                e.Handled = false;
-                return true;
-            }
-            {
-                e.Handled = true;
-                MessageBox.Show("Ingrese solo numeros");
-                return false;
-            }
-        }
-        public bool validarNumerosSinSigno(KeyPressEventArgs e)
-        {
-            if (char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-                return true;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-                return true;
-            }
-            else
-            {
-                e.Handled = true;
-                MessageBox.Show("Ingrese solo numeros");
-                return false;
-            }
-        }
 
-        public bool validarNumerosConSigno(KeyPressEventArgs e,string cadena)
-        {
-            if (char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-                return true;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-                return true;
-            }
-            else if (e.KeyChar == '+' || e.KeyChar == '-')
-            {
-                if (!signo && cadena=="")
-                {
-
-                    signo = true;
-                    e.Handled = false;
-                    return true;
-                }
-                else
-                {
-                    e.Handled = true;
-                    return false;
-                }
-            }
-            else
-            {
-                e.Handled = true;
-                MessageBox.Show("Ingrese solo numeros y signo +/-");
-                return false;
-            }
-        }
-        public bool txtvacio(TextBox texto)
-        {
-            if (texto.Text == "")
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-        public bool comboboxVacio(ComboBox texto)
-        {
-            if (texto.Text == "")
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        Validaciones Validar = new();
 
         public Form1()
         {
@@ -145,29 +23,20 @@ namespace Metodo_Hamming
             switch (seleccion)
             {
                 case "Entero sin signo":
-                   
-                    if (validarNumerosSinSigno(e))
-                    {
-
-                    }
+                        Validar.NumerosSinSigno(e);
                     break;
                 case "Entero con signo":
-                    if (validarNumerosConSigno(e, txtDatoIngresado.Text))
-                    {
-
-                    }
+                        Validar.NumerosConSigno(e, txtDatoIngresado.Text);
                     break;
                 case "Flotante":
-                    if (validarNumerosFlotantes(e,txtDatoIngresado.Text))
-                    {
-
-                    }
+                        Validar.NumerosFlotantes(e, txtDatoIngresado.Text);
                     break;
                 case "Caracter":
                     break;
                 case "Cadena de caracteres":
+                    break;
                 default:
-                    MessageBox.Show("Seleccione el tipo de dato");
+                    errorConversion.SetError(cbTipoDato,"Seleccione el tipo de dato");
                     e.Handled = true;
                     break;
             }
@@ -175,7 +44,36 @@ namespace Metodo_Hamming
 
         private void cbTipoDato_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtDatoIngresado.Text = "";
             seleccion = cbTipoDato.Text;
+        }
+
+
+        private void btnConversion_Click(object sender, EventArgs e)
+        {
+            if (txtDatoIngresado.Text != "")
+            {
+                switch (seleccion)
+                {
+                    case "Entero sin signo":
+                        break;
+                    case "Entero con signo":
+                        break;
+                    case "Flotante":
+                        break;
+                    case "Caracter":
+                        break;
+                    case "Cadena de caracteres":
+                        break;
+                    default:
+                        errorConversion.SetError(cbTipoDato, "Seleccione el tipo de dato");
+                        break;
+                }
+            }
+            else
+            {
+                errorConversion.SetError(txtDatoIngresado, "Llene el campo con el dato a convertir");
+            }
         }
     }
 }
