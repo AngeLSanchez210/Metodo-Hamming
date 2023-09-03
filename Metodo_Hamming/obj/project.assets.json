@@ -16,11 +16,19 @@
     "restore": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
       "projectName": "Metodo_Hamming",
       "projectPath": "C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
       "packagesPath": "C:\\Users\\Isaac\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
+      "projectName": "Metodo_Hamming",
+      "projectPath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
+      "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\obj\\",
+>>>>>>> 51b723a9623ba7561bdd91ab2e098e8c9d9c2865
 =======
       "projectUniqueName": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
       "projectName": "Metodo_Hamming",
