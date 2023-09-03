@@ -8,47 +8,23 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Diego\\.nuget\\packages\\": {},
+    "C:\\Users\\Isaac\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
       "projectName": "Metodo_Hamming",
       "projectPath": "C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
       "packagesPath": "C:\\Users\\Isaac\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
-      "projectName": "Metodo_Hamming",
-      "projectPath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
-      "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\obj\\",
->>>>>>> 51b723a9623ba7561bdd91ab2e098e8c9d9c2865
-=======
-      "projectUniqueName": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
-      "projectName": "Metodo_Hamming",
-      "projectPath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
-      "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\obj\\",
->>>>>>> 51b723a9623ba7561bdd91ab2e098e8c9d9c2865
-=======
-      "projectUniqueName": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
-      "projectName": "Metodo_Hamming",
-      "projectPath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
-      "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\obj\\",
->>>>>>> 51b723a9623ba7561bdd91ab2e098e8c9d9c2865
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Isaac\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -93,8 +69,16 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

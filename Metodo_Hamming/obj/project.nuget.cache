@@ -1,26 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   "dgSpecHash": "IsdX9fQlXfMThHcjm5+XSw28wZm+5p+IGoity+/sNBnhkX95ZO0hwcryqloCpuQCGv2gqo8gELYRF9P62zy01A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
-=======
-  "dgSpecHash": "+/ZYPF61zz1TssS1q/m5OhsgHkbYsrOBFdOU2bkuorPSd4jdAjLSe/6lwpwIxtAmM25kck9AA7iiEyt/qWTvSg==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
->>>>>>> 51b723a9623ba7561bdd91ab2e098e8c9d9c2865
-=======
-  "dgSpecHash": "+/ZYPF61zz1TssS1q/m5OhsgHkbYsrOBFdOU2bkuorPSd4jdAjLSe/6lwpwIxtAmM25kck9AA7iiEyt/qWTvSg==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
->>>>>>> 51b723a9623ba7561bdd91ab2e098e8c9d9c2865
-=======
-  "dgSpecHash": "+/ZYPF61zz1TssS1q/m5OhsgHkbYsrOBFdOU2bkuorPSd4jdAjLSe/6lwpwIxtAmM25kck9AA7iiEyt/qWTvSg==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
->>>>>>> 51b723a9623ba7561bdd91ab2e098e8c9d9c2865
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
