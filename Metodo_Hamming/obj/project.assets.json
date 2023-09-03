@@ -8,23 +8,23 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Diego\\.nuget\\packages\\": {},
+    "C:\\Users\\angel\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
+      "projectUniqueName": "C:\\Users\\angel\\source\\repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
       "projectName": "Metodo_Hamming",
-      "projectPath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
-      "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\obj\\",
+      "projectPath": "C:\\Users\\angel\\source\\repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
+      "packagesPath": "C:\\Users\\angel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\angel\\source\\repos\\Metodo-Hamming\\Metodo_Hamming\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\angel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
