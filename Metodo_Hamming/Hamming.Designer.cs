@@ -52,6 +52,7 @@
             txtBits.Name = "txtBits";
             txtBits.Size = new Size(157, 23);
             txtBits.TabIndex = 1;
+            txtBits.KeyPress += txtBits_KeyPress;
             // 
             // btnEnviar
             // 
@@ -84,7 +85,7 @@
             // 
             lblErrorInput.AutoSize = true;
             lblErrorInput.ForeColor = Color.Red;
-            lblErrorInput.Location = new Point(281, 66);
+            lblErrorInput.Location = new Point(224, 66);
             lblErrorInput.Name = "lblErrorInput";
             lblErrorInput.Size = new Size(0, 15);
             lblErrorInput.TabIndex = 5;

@@ -36,5 +36,35 @@ namespace Metodo_Hamming
 
             return numeroCodificado;
         }
+
+        public bool validacion(KeyPressEventArgs e, Label lblError)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                if(e.KeyChar == '1' || e.KeyChar == '0')
+                {
+                    lblError.Text = "";
+                    e.Handled = false;
+                    return true;
+                }
+                else
+                {
+                    e.Handled = true;
+                    lblError.Text = "Solo se permite ingresar 1 y 0";
+                    return false;
+                }
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+                return true;
+            }
+            else
+            {
+                e.Handled = true;
+                lblError.Text = "Solo se permiten numeros de 1 y 0";
+                return false;
+            }
+        }
     }
 }

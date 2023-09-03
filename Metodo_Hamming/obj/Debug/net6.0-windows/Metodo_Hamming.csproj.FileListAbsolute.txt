@@ -16,7 +16,6 @@ C:\Users\Isaac\source\repos\Metodo_Hamming\Metodo_Hamming\obj\Debug\net6.0-windo
 C:\Users\Isaac\source\repos\Metodo_Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.genruntimeconfig.cache
 C:\Users\Isaac\source\repos\Metodo_Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\ref\Metodo_Hamming.dll
 C:\Users\Diego\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.Form1.resources
-C:\Users\Diego\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.Metodo_Hamming.resources
 C:\Users\Diego\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.csproj.GenerateResource.cache
 C:\Users\Diego\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Diego\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.AssemblyInfoInputs.cache
@@ -32,5 +31,4 @@ C:\Users\Diego\Source\Repos\Metodo-Hamming\Metodo_Hamming\bin\Debug\net6.0-windo
 C:\Users\Diego\Source\Repos\Metodo-Hamming\Metodo_Hamming\bin\Debug\net6.0-windows\Metodo_Hamming.pdb
 C:\Users\Diego\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.genruntimeconfig.cache
 C:\Users\Diego\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\ref\Metodo_Hamming.dll
-C:\Users\Diego\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.HammingForm.resources
 C:\Users\Diego\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.Hamming.resources
