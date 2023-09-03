@@ -42,40 +42,48 @@
             // 
             panel1.BackColor = SystemColors.MenuHighlight;
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(175, 2);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1215, 120);
+            panel1.Size = new Size(1034, 80);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Font = new Font("Elephant", 27.7499962F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(372, 46);
+            label1.Font = new Font("Microsoft Sans Serif", 27.7499962F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(341, 18);
             label1.Name = "label1";
-            label1.Size = new Size(542, 47);
+            label1.Size = new Size(433, 42);
             label1.TabIndex = 0;
             label1.Text = "METODO DE HAMMING";
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.ActiveCaptionText;
+            panel2.BackColor = SystemColors.MenuHighlight;
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
-            panel2.Location = new Point(0, 2);
+            panel2.Dock = DockStyle.Left;
+            panel2.Location = new Point(0, 80);
             panel2.Name = "panel2";
-            panel2.Size = new Size(204, 623);
+            panel2.Size = new Size(143, 543);
             panel2.TabIndex = 1;
             // 
             // button2
             // 
-            button2.BackColor = SystemColors.ControlDarkDark;
-            button2.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.BackColor = SystemColors.MenuHighlight;
+            button2.Cursor = Cursors.Hand;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 160, 215);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Unispace", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(12, 330);
+            button2.Location = new Point(-11, 149);
             button2.Name = "button2";
-            button2.Size = new Size(174, 78);
+            button2.Size = new Size(162, 85);
             button2.TabIndex = 3;
             button2.Text = "Metodo de Hammig";
             button2.UseVisualStyleBackColor = false;
@@ -83,12 +91,16 @@
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.ControlDarkDark;
-            button1.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(12, 160);
+            button1.BackColor = SystemColors.MenuHighlight;
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(0,160,215);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Unispace", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.ButtonFace;
+            button1.Location = new Point(-11, 65);
             button1.Name = "button1";
-            button1.Size = new Size(174, 78);
+            button1.Size = new Size(162, 78);
             button1.TabIndex = 2;
             button1.Text = "Conversion";
             button1.UseVisualStyleBackColor = false;
@@ -96,23 +108,25 @@
             // 
             // mostrar
             // 
-            mostrar.BackColor = SystemColors.ControlDarkDark;
-            mostrar.Location = new Point(210, 128);
+            mostrar.BackColor = SystemColors.Control;
+            mostrar.Dock = DockStyle.Fill;
+            mostrar.Location = new Point(143, 80);
             mostrar.Name = "mostrar";
-            mostrar.Size = new Size(1168, 497);
+            mostrar.Size = new Size(891, 543);
             mostrar.TabIndex = 2;
             // 
             // Principal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1390, 623);
+            ClientSize = new Size(1034, 623);
             Controls.Add(mostrar);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            ForeColor = SystemColors.ButtonHighlight;
+            ForeColor = SystemColors.ActiveCaptionText;
             Name = "Principal";
-            Text = "Principal";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Conversor a binario y codificador metodo de hamming";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

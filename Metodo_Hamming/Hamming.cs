@@ -15,6 +15,7 @@ namespace Metodo_Hamming
         public Hamming()
         {
             InitializeComponent();
+
         }
         logicaMetodoHamming logic = new logicaMetodoHamming();
 
@@ -44,6 +45,7 @@ namespace Metodo_Hamming
                     }
                     //Luego se crea un arrelo que almacenara el dato ya codificado
                     int[] numeroCodificado = logic.codificarBinario(binario);//Se manda el arreglo de bits para que se codifique
+                    lblNumeroCodi.Text = "";
 
                     foreach (var item in numeroCodificado)//Con el foreach se recorre el arreglo del numero codificado para que se muestre en el Label
                     {
