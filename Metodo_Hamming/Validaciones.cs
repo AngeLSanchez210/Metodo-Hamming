@@ -132,10 +132,10 @@ namespace Metodo_Hamming
             }
         }
 
-        public bool NumerosConSigno(KeyPressEventArgs e, string cadena)
+        public bool NumerosConSigno(KeyPressEventArgs e,TextBox cadena)
         {
             int banderaSigno = 0;
-            foreach (char c in cadena)
+            foreach (char c in cadena.Text)
             {
                 if (c == '-')
                 {
@@ -160,10 +160,15 @@ namespace Metodo_Hamming
                     e.Handled = true;
                     return false;
                 }
-                else
+                else if(cadena.SelectionStart == 0)
                 {
                     e.Handled = false;
                     return true;
+                }
+                else
+                {
+                    e.Handled = true;
+                    return false;
                 }
             }
             else

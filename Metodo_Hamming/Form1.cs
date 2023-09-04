@@ -20,8 +20,11 @@ namespace Metodo_Hamming
                 case "Entero sin signo":
                     Validar.NumerosSinSigno(e);
                     break;
-                case "Entero con signo":
-                    Validar.NumerosConSigno(e, txtDatoIngresado.Text);
+                case"Entero con signo (Complemento 1)":
+                    Validar.NumerosConSigno(e, txtDatoIngresado);
+                    break;
+                case "Entero con signo (Bit mas representativo)":
+                    Validar.NumerosConSigno(e, txtDatoIngresado);
                     break;
                 case "Flotante":
                     Validar.NumerosFlotantes(e, txtDatoIngresado.Text);
@@ -49,33 +52,49 @@ namespace Metodo_Hamming
                 {
                     case "Entero sin signo":
                         string resultado = Convertir.EnterosSinSigno(txtDatoIngresado.Text);
-                        if (resultado == "No es posible la conversion")
+                        if (resultado == "")
                         {
                             MessageBox.Show("Error, el dato es de una dimension que no puede ser representada en 16 bits");
-
                         }
                         else
                         {
                             lblResultado.Text = resultado;
                         }
                         break;
-                    case "Entero con signo":
-                        resultado = Convertir.EnterosConSigno(txtDatoIngresado.Text);
-                        if (resultado == "No es posible la conversion")
+
+                    case "Entero con signo (Complemento 1)":
+                        resultado = Convertir.EnterosConSigno(txtDatoIngresado.Text, cbTipoDato.Text);
+                        if (resultado == "")
                         {
                             MessageBox.Show("Error, el dato es de una dimension que no puede ser representada en 16 bits");
-
                         }
                         else
                         {
                             lblResultado.Text = resultado;
                         }
                         break;
+
+                    case "Entero con signo (Bit mas representativo)":
+                        resultado = Convertir.EnterosConSigno(txtDatoIngresado.Text,cbTipoDato.Text);
+                        if (resultado == "")
+                        {
+                            MessageBox.Show("Error, el dato es de una dimension que no puede ser representada en 16 bits");
+                        }
+                        else
+                        {
+                            lblResultado.Text = resultado;
+                        }
+                        break;
+
                     case "Flotante":
                         break;
+
                     case "Caracter":
                         break;
+
                     case "Cadena de caracteres":
+                        break;
+
                     default:
                         MessageBox.Show("Seleccione el tipo de dato");
                         break;

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj": {}
+    "C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj": {
+    "C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
+        "projectUniqueName": "C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
         "projectName": "Metodo_Hamming",
-        "projectPath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
-        "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Diego\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\obj\\",
+        "projectPath": "C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\Metodo_Hamming.csproj",
+        "packagesPath": "C:\\Users\\Isaac\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Isaac\\Source\\Repos\\Metodo-Hamming\\Metodo_Hamming\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Isaac\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -62,7 +62,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -9,19 +9,19 @@ namespace Metodo_Hamming
 {
     public class Conversiones
     {
-        public static string ABinario(short valor,ushort? valor1)
+        static string C1(string binary)
         {
-            string conversion = Convert.ToString(valor, 2).PadLeft(16, '0');
-            string resultado = string.Format("{0} {1} {2} {3}",
-                conversion.Substring(0, 4),
-                conversion.Substring(4, 4),
-                conversion.Substring(8, 4),
-                conversion.Substring(12, 4));
-            return resultado;
 
+            char[] complemento = new char[binary.Length];
+
+            for (int i = 0; i < binary.Length; i++)
+            {
+                complemento[i] = binary[i] == '0' ? '1' : '0';
+            }
+
+            return new string(complemento);
         }
-
-        public string EnterosConSigno(string dato)
+        public string EnterosConSigno(string dato, string opcion)
         {
             short entero;
             if (short.TryParse(dato, out entero))
@@ -32,11 +32,31 @@ namespace Metodo_Hamming
                     conversion.Substring(4, 4),
                     conversion.Substring(8, 4),
                     conversion.Substring(12, 4));
-                return resultado;
+                if (opcion == "Entero con signo (Bit mas representativo)")
+                {
+                    return resultado;
+                }
+                else
+                {
+                    if (dato[0]=='-')
+                    {
+                        string complemento = C1(conversion);
+                        resultado = string.Format("{0} {1} {2} {3}",
+                            complemento.Substring(0, 4),
+                            complemento.Substring(4, 4),
+                            complemento.Substring(8, 4),
+                            complemento.Substring(12, 4));
+                        return resultado;
+                    }
+                    else
+                    {
+                        return resultado;
+                    }
+                }
             }
             else
             {
-                return "No es posible la conversion";
+                return "";
             }
         }
 
@@ -55,7 +75,7 @@ namespace Metodo_Hamming
             } 
             else
             {
-                return "No es posible la conversion";
+                return "";
             }
         }
     }
