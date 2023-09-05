@@ -99,6 +99,15 @@ namespace Metodo_Hamming
                         break;
 
                     case "Flotante":
+                        resultado = Convertir.FloatToBinary(float.Parse(txtDatoIngresado.Text));
+                        if (resultado == "")
+                        {
+                            errorConversion.SetError(txtDatoIngresado, "El dato es de una dimension que no puede ser representada en 16 bits");
+                        }
+                        else
+                        {
+                            lblResultado.Text = resultado;
+                        }
                         break;
 
                     case "Caracter":

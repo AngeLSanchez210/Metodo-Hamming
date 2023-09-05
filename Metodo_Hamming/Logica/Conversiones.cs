@@ -7,31 +7,50 @@ using System.Threading.Tasks;
 
 namespace Metodo_Hamming.Logica
 {
-    public class Conversiones
+    public class Conversiones /*Clase que contiene todas las conversiones de tipo de dato a binario
+                                y sus diferentes representaciones.*/
     {
-        static string C1(string binary)
+        /*Metodo para convertir cualquier tipo de dato a un binario de 16 bits, recibe un parametro
+        de tipo dynamic, este tipo de dato almecena cualquier tipo de dato desde un string a un flotante
+        esto para permite una mayor utilidad del metodo (Los datos ingresados estan previamente validados)*/
+        public string ConversionBin(dynamic numero)
         {
+            string conversion = Convert.ToString(numero, 2).PadLeft(16, '0');
+            return conversion;
+        }
 
-            char[] complemento = new char[binary.Length];
+        /*Funcion para dar un formato de separacion al binario resultante de la conversion del dato
+         que ingreso el usuario, se muestra en formato de 4 bits en 4 bits (0000 0000 0000 0000) esto
+        con el fin de facilitar la lectura del binario resultante*/
+        public string DarFormato(string conversion)
+        {
+            string resultado = string.Format("{0} {1} {2} {3}",
+                conversion.Substring(0, 4),
+                conversion.Substring(4, 4),
+                conversion.Substring(8, 4),
+                conversion.Substring(12, 4));
+            return resultado;
+        }
 
-            for (int i = 0; i < binary.Length; i++)
+        public string ComplementoC1(string Binario)
+        {
+            char[] C1 = new char[Binario.Length];
+
+            for (int i = 0; i < Binario.Length; i++)
             {
-                complemento[i] = binary[i] == '0' ? '1' : '0';
+                C1[i] = Binario[i] == '0' ? '1' : '0';
             }
 
-            return new string(complemento);
+            return new string(C1);
         }
         public string EnterosConSigno(string dato, string opcion)
         {
-            short entero;
-            if (short.TryParse(dato, out entero))
+            short numero;
+            if (short.TryParse(dato, out numero))
             {
-                string conversion = Convert.ToString(entero, 2).PadLeft(16, '0');
-                string resultado = string.Format("{0} {1} {2} {3}",
-                    conversion.Substring(0, 4),
-                    conversion.Substring(4, 4),
-                    conversion.Substring(8, 4),
-                    conversion.Substring(12, 4));
+                string conversion = ConversionBin(numero);
+                string resultado = DarFormato(conversion);
+
                 if (opcion == "Entero con signo (Bit mas representativo)")
                 {
                     return resultado;
@@ -40,12 +59,8 @@ namespace Metodo_Hamming.Logica
                 {
                     if (dato[0] == '-')
                     {
-                        string complemento = C1(conversion);
-                        resultado = string.Format("{0} {1} {2} {3}",
-                            complemento.Substring(0, 4),
-                            complemento.Substring(4, 4),
-                            complemento.Substring(8, 4),
-                            complemento.Substring(12, 4));
+                        string complemento = ComplementoC1(conversion);
+                        resultado = DarFormato(complemento);
                         return resultado;
                     }
                     else
@@ -62,15 +77,11 @@ namespace Metodo_Hamming.Logica
 
         public string EnterosSinSigno(string dato)
         {
-            ushort entero;
-            if (ushort.TryParse(dato, out entero))
+            ushort numero;
+            if (ushort.TryParse(dato, out numero))
             {
-                string conversion = Convert.ToString(entero, 2).PadLeft(16, '0');
-                string resultado = string.Format("{0} {1} {2} {3}",
-                    conversion.Substring(0, 4),
-                    conversion.Substring(4, 4),
-                    conversion.Substring(8, 4),
-                    conversion.Substring(12, 4));
+                string conversion = ConversionBin(numero);
+                string resultado = DarFormato(conversion);
                 return resultado;
             }
             else
@@ -78,5 +89,38 @@ namespace Metodo_Hamming.Logica
                 return "";
             }
         }
+
+        public string FloatToBinary(float number)
+        {
+            int integerPart = (int)number;
+            float fractionalPart = number - integerPart;
+
+            string integerBinary = Convert.ToString(integerPart, 2);
+
+            string fractionalBinary = "";
+            while (fractionalPart > 0 && fractionalBinary.Length < 10)
+            {
+                fractionalPart *= 2;
+                int fractionalBit = (int)fractionalPart;
+                fractionalBinary += fractionalBit;
+                fractionalPart -= fractionalBit;
+            }
+
+            return integerBinary + "." + fractionalBinary;
+        }
+
+        //public string Flotantes16Bits(string dato)
+        //{
+        //    try
+        //    {
+        //        MessageBox.Show($"{Half.Parse(dato)}");
+        //        string resultado = DarFormato(ConversionBin(dato));
+        //        return resultado;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return "";
+        //    }
+        //}
     }
 }
