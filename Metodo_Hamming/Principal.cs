@@ -31,7 +31,7 @@ namespace Metodo_Hamming
             button2.BackColor = Color.FromArgb(0, 120, 215);
             button3.BackColor = Color.FromArgb(0, 120, 215);
             mostrar.Controls.Clear();
-            Form1 conver = new Form1();
+            ConversionBin conver = new ConversionBin();
             conver.TopLevel = false;
             mostrar.Controls.Add(conver);
             conver.Dock = DockStyle.Fill;

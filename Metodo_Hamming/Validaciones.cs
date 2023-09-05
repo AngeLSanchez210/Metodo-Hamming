@@ -8,6 +8,17 @@ namespace Metodo_Hamming
 {
     public class Validaciones
     {
+        ErrorProvider error;
+        TextBox texto;
+        ComboBox combo;
+
+        public Validaciones(ErrorProvider error, TextBox texto, ComboBox combo)
+        {
+            this.error = error;
+            this.texto = texto;
+            this.combo = combo;
+        }
+
         public bool Flotantes(KeyPressEventArgs e, string texto)
         {
             int banderaPunto = 0;
@@ -48,6 +59,7 @@ namespace Metodo_Hamming
                 return false;
             }
         }
+
         public bool Texto(KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar))
@@ -68,10 +80,11 @@ namespace Metodo_Hamming
             else
             {
                 e.Handled = true;
-                MessageBox.Show("Ingrese solo letras");
+                error.SetError(texto,"Ingrese solo letras");
                 return false;
             }
         }
+
         public bool NumerosFlotantes(KeyPressEventArgs e, string cadena)
         {
             int banderaPunto = 0;
@@ -112,6 +125,7 @@ namespace Metodo_Hamming
                 return false;
             }
         }
+
         public bool NumerosSinSigno(KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar))
@@ -127,7 +141,7 @@ namespace Metodo_Hamming
             else
             {
                 e.Handled = true;
-                MessageBox.Show("Ingrese solo numeros");
+                error.SetError(texto,"Ingrese solo numeros");
                 return false;
             }
         }
@@ -174,30 +188,8 @@ namespace Metodo_Hamming
             else
             {
                 e.Handled = true;
-                MessageBox.Show("Ingrese solo numeros y signo el signo '-'");
+                error.SetError(texto,"Ingrese solo numeros y signo el signo '-'");
                 return false;
-            }
-        }
-        public bool txtvacio(TextBox texto)
-        {
-            if (texto.Text == "")
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-        public bool comboboxVacio(ComboBox texto)
-        {
-            if (texto.Text == "")
-            {
-                return false;
-            }
-            else
-            {
-                return true;
             }
         }
     }

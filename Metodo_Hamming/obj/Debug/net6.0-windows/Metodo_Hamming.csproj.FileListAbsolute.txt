@@ -22,7 +22,6 @@ C:\Users\Isaac\Source\Repos\Metodo-Hamming\Metodo_Hamming\bin\Debug\net6.0-windo
 C:\Users\Isaac\Source\Repos\Metodo-Hamming\Metodo_Hamming\bin\Debug\net6.0-windows\Metodo_Hamming.dll
 C:\Users\Isaac\Source\Repos\Metodo-Hamming\Metodo_Hamming\bin\Debug\net6.0-windows\Metodo_Hamming.pdb
 C:\Users\Isaac\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.csproj.AssemblyReference.cache
-C:\Users\Isaac\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.Form1.resources
 C:\Users\Isaac\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.Hamming.resources
 C:\Users\Isaac\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.Principal.resources
 C:\Users\Isaac\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.csproj.GenerateResource.cache
@@ -54,3 +53,5 @@ C:\Users\angel\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windo
 C:\Users\angel\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.genruntimeconfig.cache
 C:\Users\angel\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\ref\Metodo_Hamming.dll
 C:\Users\angel\source\repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.Pariedad.resources
+C:\Users\Isaac\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.ConversionBin.resources
+C:\Users\Isaac\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.Pariedad.resources
