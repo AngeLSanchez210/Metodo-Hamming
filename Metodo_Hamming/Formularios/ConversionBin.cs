@@ -1,5 +1,6 @@
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using Metodo_Hamming.Logica;
 
 namespace Metodo_Hamming
 {

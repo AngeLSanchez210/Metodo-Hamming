@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Metodo_Hamming
+namespace Metodo_Hamming.Logica
 {
     public class logicaMetodoHamming
     {
@@ -40,10 +40,10 @@ namespace Metodo_Hamming
         public bool validacion(KeyPressEventArgs e, Label lblError)
         {
 
-            
+
             if (char.IsDigit(e.KeyChar))
             {
-                if(e.KeyChar == '1' || e.KeyChar == '0')
+                if (e.KeyChar == '1' || e.KeyChar == '0')
                 {
                     lblError.Text = "";
                     e.Handled = false;

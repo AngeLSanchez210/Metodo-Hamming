@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="ConversionBin.cs">
+    <Compile Update="Formularios\ConversionBin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Hamming.cs">
+    <Compile Update="Formularios\Hamming.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pariedad.cs">
+    <Compile Update="Formularios\Pariedad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Principal.cs">
+    <Compile Update="Formularios\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

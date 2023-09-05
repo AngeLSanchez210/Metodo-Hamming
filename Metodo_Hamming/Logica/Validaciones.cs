@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Metodo_Hamming
+namespace Metodo_Hamming.Logica
 {
     public class Validaciones
     {
@@ -80,7 +80,7 @@ namespace Metodo_Hamming
             else
             {
                 e.Handled = true;
-                error.SetError(texto,"Ingrese solo letras");
+                error.SetError(texto, "Ingrese solo letras");
                 return false;
             }
         }
@@ -141,12 +141,12 @@ namespace Metodo_Hamming
             else
             {
                 e.Handled = true;
-                error.SetError(texto,"Ingrese solo numeros");
+                error.SetError(texto, "Ingrese solo numeros");
                 return false;
             }
         }
 
-        public bool NumerosConSigno(KeyPressEventArgs e,TextBox cadena)
+        public bool NumerosConSigno(KeyPressEventArgs e, TextBox cadena)
         {
             int banderaSigno = 0;
             foreach (char c in cadena.Text)
@@ -174,7 +174,7 @@ namespace Metodo_Hamming
                     e.Handled = true;
                     return false;
                 }
-                else if(cadena.SelectionStart == 0)
+                else if (cadena.SelectionStart == 0)
                 {
                     e.Handled = false;
                     return true;
@@ -188,7 +188,7 @@ namespace Metodo_Hamming
             else
             {
                 e.Handled = true;
-                error.SetError(texto,"Ingrese solo numeros y signo el signo '-'");
+                error.SetError(texto, "Ingrese solo numeros y signo el signo '-'");
                 return false;
             }
         }

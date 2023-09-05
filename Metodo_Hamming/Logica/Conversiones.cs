@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Metodo_Hamming
+namespace Metodo_Hamming.Logica
 {
     public class Conversiones
     {
@@ -38,14 +38,14 @@ namespace Metodo_Hamming
                 }
                 else
                 {
-                    if (dato[0]=='-')
+                    if (dato[0] == '-')
                     {
                         string complemento = C1(conversion);
                         resultado = string.Format("{0} {1} {2} {3}",
                             complemento.Substring(0, 4),
                             complemento.Substring(4, 4),
                             complemento.Substring(8, 4),
-                            complemento.Substring(12, 4));  
+                            complemento.Substring(12, 4));
                         return resultado;
                     }
                     else
@@ -72,7 +72,7 @@ namespace Metodo_Hamming
                     conversion.Substring(8, 4),
                     conversion.Substring(12, 4));
                 return resultado;
-            } 
+            }
             else
             {
                 return "";
