@@ -45,7 +45,7 @@ namespace Metodo_Hamming
                             complemento.Substring(0, 4),
                             complemento.Substring(4, 4),
                             complemento.Substring(8, 4),
-                            complemento.Substring(12, 4));
+                            complemento.Substring(12, 4));  
                         return resultado;
                     }
                     else

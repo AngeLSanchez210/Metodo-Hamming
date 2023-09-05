@@ -133,6 +133,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Hamming";
             Text = "Hamming";
+            Load += Hamming_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -39,6 +39,8 @@ namespace Metodo_Hamming
 
         public bool validacion(KeyPressEventArgs e, Label lblError)
         {
+
+            
             if (char.IsDigit(e.KeyChar))
             {
                 if(e.KeyChar == '1' || e.KeyChar == '0')
@@ -65,6 +67,7 @@ namespace Metodo_Hamming
                 lblError.Text = "Solo se permiten numeros de 1 y 0";
                 return false;
             }
+
         }
     }
 }

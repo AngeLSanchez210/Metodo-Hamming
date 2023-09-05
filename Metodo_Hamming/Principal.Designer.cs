@@ -34,6 +34,7 @@
             button2 = new Button();
             button1 = new Button();
             mostrar = new Panel();
+            button3 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -64,6 +65,7 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.MenuHighlight;
+            panel2.Controls.Add(button3);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Left;
@@ -94,7 +96,7 @@
             button1.BackColor = SystemColors.MenuHighlight;
             button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(0,160,215);
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 160, 215);
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Unispace", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ButtonFace;
@@ -114,6 +116,24 @@
             mostrar.Name = "mostrar";
             mostrar.Size = new Size(891, 543);
             mostrar.TabIndex = 2;
+            mostrar.Paint += mostrar_Paint;
+            // 
+            // button3
+            // 
+            button3.BackColor = SystemColors.MenuHighlight;
+            button3.Cursor = Cursors.Hand;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 160, 215);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Unispace", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = SystemColors.ButtonHighlight;
+            button3.Location = new Point(-11, 240);
+            button3.Name = "button3";
+            button3.Size = new Size(162, 85);
+            button3.TabIndex = 4;
+            button3.Text = "Pariedad";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click_1;
             // 
             // Principal
             // 
@@ -141,5 +161,6 @@
         private Label label1;
         private Button button2;
         private Panel mostrar;
+        private Button button3;
     }
 }

@@ -72,5 +72,10 @@ namespace Metodo_Hamming
 
             }
         }
+
+        private void Hamming_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
