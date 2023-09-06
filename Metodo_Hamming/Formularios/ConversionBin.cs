@@ -27,7 +27,7 @@ namespace Metodo_Hamming
                 case "Entero sin signo":
                     Validar.NumerosSinSigno(e);
                     break;
-                case"Entero con signo (Complemento 1)":
+                case "Entero con signo (Complemento 1)":
                     Validar.NumerosConSigno(e, txtDatoIngresado);
                     break;
                 case "Entero con signo (Bit mas representativo)":
@@ -66,7 +66,7 @@ namespace Metodo_Hamming
                         string resultado = Convertir.EnterosSinSigno(txtDatoIngresado.Text);
                         if (resultado == "")
                         {
-                            errorConversion.SetError(txtDatoIngresado,"El dato es de una dimension que no puede ser representada en 16 bits");
+                            errorConversion.SetError(txtDatoIngresado, "El dato es de una dimension que no puede ser representada en 16 bits");
                         }
                         else
                         {
@@ -75,10 +75,10 @@ namespace Metodo_Hamming
                         break;
 
                     case "Entero con signo (Complemento 1)":
-                        resultado = Convertir.EnterosConSigno(txtDatoIngresado.Text,cbTipoDato.Text);
+                        resultado = Convertir.EnterosConSigno(txtDatoIngresado.Text, cbTipoDato.Text);
                         if (resultado == "")
                         {
-                            errorConversion.SetError(txtDatoIngresado,"El dato es de una dimension que no puede ser representada en 16 bits");
+                            errorConversion.SetError(txtDatoIngresado, "El dato es de una dimension que no puede ser representada en 16 bits");
                         }
                         else
                         {
@@ -117,13 +117,13 @@ namespace Metodo_Hamming
                         break;
 
                     default:
-                        errorConversion.SetError(cbTipoDato,"Seleccione el tipo de dato");
+                        errorConversion.SetError(cbTipoDato, "Seleccione el tipo de dato");
                         break;
                 }
             }
             else
             {
-                errorConversion.SetError(txtDatoIngresado,"Ingrese el dato a convertir");
+                errorConversion.SetError(txtDatoIngresado, "Ingrese el dato a convertir");
             }
         }
     }

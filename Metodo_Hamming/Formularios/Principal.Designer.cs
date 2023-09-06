@@ -31,10 +31,10 @@
             panel1 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
+            button3 = new Button();
             button2 = new Button();
             button1 = new Button();
             mostrar = new Panel();
-            button3 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -74,6 +74,23 @@
             panel2.Size = new Size(143, 543);
             panel2.TabIndex = 1;
             // 
+            // button3
+            // 
+            button3.BackColor = SystemColors.MenuHighlight;
+            button3.Cursor = Cursors.Hand;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 160, 215);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Unispace", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = SystemColors.ButtonHighlight;
+            button3.Location = new Point(-11, 240);
+            button3.Name = "button3";
+            button3.Size = new Size(162, 85);
+            button3.TabIndex = 4;
+            button3.Text = "Pariedad";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click_1;
+            // 
             // button2
             // 
             button2.BackColor = SystemColors.MenuHighlight;
@@ -110,30 +127,13 @@
             // 
             // mostrar
             // 
-            mostrar.BackColor = SystemColors.Control;
+            mostrar.BackColor = Color.SlateGray;
             mostrar.Dock = DockStyle.Fill;
             mostrar.Location = new Point(143, 80);
             mostrar.Name = "mostrar";
             mostrar.Size = new Size(891, 543);
             mostrar.TabIndex = 2;
             mostrar.Paint += mostrar_Paint;
-            // 
-            // button3
-            // 
-            button3.BackColor = SystemColors.MenuHighlight;
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 160, 215);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Unispace", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(-11, 240);
-            button3.Name = "button3";
-            button3.Size = new Size(162, 85);
-            button3.TabIndex = 4;
-            button3.Text = "Pariedad";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click_1;
             // 
             // Principal
             // 

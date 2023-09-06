@@ -35,54 +35,67 @@ namespace Metodo_Hamming
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string numeroBinario = dato.Text.Trim();
+            string input = dato.Text; //creamos una variable que contendra el dato que el usuario ingrese en el textbox
 
-          
-
-            // Calcular la paridad contando los unos en el número binario.
-            int unos = ContarUnos(numeroBinario);
-
-            // Determinar si la paridad es par o impar.
-            string resultadoParidad = (unos % 2 == 0) ? "0" : "1";
-
-            // Mostrar el resultado en el Label junto con el número binario original.
-            resultado.Text = "Número binario con paridad: " + numeroBinario + resultadoParidad;
-        }
-
-        // Función para verificar si el número binario ingresado es válido.
-        private bool EsNumeroBinarioValido(string numeroBinario)
-        {
-            return System.Text.RegularExpressions.Regex.IsMatch(numeroBinario, "^[01]{1,6}$");
-        }
-
-        // Función para contar los unos en el número binario.
-        private int ContarUnos(string numeroBinario)
-        {
-            int unos = 0;
-            foreach (char bit in numeroBinario)
+            if (input.Length != 6 || !EsBinario(input))  //hacemos una validacion para cuando el usuario de al boton sin tener nada 
             {
-                if (bit == '1')
-                {
-                    unos++;
-                }
-            }
-            return unos;
-        }
-
-        private void dato_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!logic.validacion(e, error))
-            {
-                
+                MessageBox.Show("Entrada inválida. Debe ser un número binario de 6 bits.");
             }
             else
             {
-                if (!char.IsDigit(e.KeyChar) || dato.Text.Length >= 6)
+                int unos = ContarUnos(input); // Contamos la cantidad de unos en el número binario ingresado
+                int paridadDeseada = (unos % 2 == 0) ? 0 : 1; //verificamos si la cantidad de unos es un numero par entonces la pariedad deseada sera 0 y si no lo contrario
+
+                pari.Text = (paridadDeseada == 0) ? "PAR" : "IMPAR"; //hacemos la verificacion solamente esto nos indicara que tipo de pariedad es
+                resultado.Text = input + paridadDeseada; // en un label guardamos esto y concatenamos el binario ingresado ya con su´pariedad es decir seran 7 bits
+
+            }
+        }
+
+        private bool EsBinario(string str) //definimos esta funcion que toma una cadena string
+        {
+            foreach (char c in str) //por medio del foreach va checando los datos de cadena uno por uno
+            {
+                if (c != '0' && c != '1') //verifica que la cadena contenga 0 o 1 y si hay uno diferente retorna false
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private int ContarUnos(string str) //definimos otra funcion para contar los unos
+        {
+            int count = 0;  // inicializamos una variable contador en 0 
+            foreach (char c in str) //recorremos con el foreach nuestra cadena 
+            {
+                if (c == '1')  // y con un if los 1 que encontramos los iremos aumentando en nuestro contador
+                {
+                    count++;
+                }
+            }
+            return count; //retornamos
+
+
+        }
+
+
+
+        private void dato_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!logic.validacion(e, error)) // importamos las validacion de nuestra carpeta logica , validaciones
+            {
+
+            }
+            else
+            {
+                if (!char.IsDigit(e.KeyChar) || dato.Text.Length >= 6) //validacion para ingresar max 6 bits
                 {
                     if (e.KeyChar != (char)Keys.Back)
                     {
                         e.Handled = true;
                         error.Text = "Ya ha ingresado el número máximo de bits.";
+                        error.ForeColor = Color.Green;
                     }
                     else
                     {
@@ -93,16 +106,16 @@ namespace Metodo_Hamming
                 {
                     error.Text = "";
                 }
+
             }
-
-        }
-
-
-
-        private void dato_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
+
+
+
+
+
+
+
 

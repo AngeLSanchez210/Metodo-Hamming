@@ -28,120 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtDatoIngresado = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbTipoDato = new System.Windows.Forms.ComboBox();
-            this.btnConvertir = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblResultado = new System.Windows.Forms.Label();
-            this.errorConversion = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorConversion)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            label1 = new Label();
+            txtDatoIngresado = new TextBox();
+            label2 = new Label();
+            cbTipoDato = new ComboBox();
+            btnConvertir = new Button();
+            label3 = new Label();
+            lblResultado = new Label();
+            errorConversion = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorConversion).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(484, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(344, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ingrese el dato a representar en 16 bits:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(484, 61);
+            label1.Name = "label1";
+            label1.Size = new Size(344, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Ingrese el dato a representar en 16 bits:";
             // 
             // txtDatoIngresado
             // 
-            this.txtDatoIngresado.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDatoIngresado.Location = new System.Drawing.Point(484, 99);
-            this.txtDatoIngresado.Name = "txtDatoIngresado";
-            this.txtDatoIngresado.Size = new System.Drawing.Size(344, 33);
-            this.txtDatoIngresado.TabIndex = 1;
-            this.txtDatoIngresado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDatoIngresado_KeyPress);
+            txtDatoIngresado.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDatoIngresado.Location = new Point(484, 99);
+            txtDatoIngresado.Name = "txtDatoIngresado";
+            txtDatoIngresado.Size = new Size(344, 33);
+            txtDatoIngresado.TabIndex = 1;
+            txtDatoIngresado.KeyPress += txtDatoIngresado_KeyPress;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(36, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(346, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Seleccione el tipo de dato a representar";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(36, 61);
+            label2.Name = "label2";
+            label2.Size = new Size(346, 25);
+            label2.TabIndex = 2;
+            label2.Text = "Seleccione el tipo de dato a representar";
             // 
             // cbTipoDato
             // 
-            this.cbTipoDato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoDato.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbTipoDato.FormattingEnabled = true;
-            this.cbTipoDato.Items.AddRange(new object[] {
-            "Entero sin signo",
-            "Entero con signo (Complemento 1)",
-            "Entero con signo (Bit mas representativo)",
-            "Flotante",
-            "Caracter",
-            "Cadena de caracteres"});
-            this.cbTipoDato.Location = new System.Drawing.Point(36, 99);
-            this.cbTipoDato.Name = "cbTipoDato";
-            this.cbTipoDato.Size = new System.Drawing.Size(374, 33);
-            this.cbTipoDato.TabIndex = 3;
-            this.cbTipoDato.SelectedIndexChanged += new System.EventHandler(this.cbTipoDato_SelectedIndexChanged);
+            cbTipoDato.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbTipoDato.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbTipoDato.FormattingEnabled = true;
+            cbTipoDato.Items.AddRange(new object[] { "Entero sin signo", "Entero con signo (Complemento 1)", "Entero con signo (Bit mas representativo)", "Flotante", "Caracter", "Cadena de caracteres" });
+            cbTipoDato.Location = new Point(36, 99);
+            cbTipoDato.Name = "cbTipoDato";
+            cbTipoDato.Size = new Size(374, 33);
+            cbTipoDato.TabIndex = 3;
+            cbTipoDato.SelectedIndexChanged += cbTipoDato_SelectedIndexChanged;
             // 
             // btnConvertir
             // 
-            this.btnConvertir.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnConvertir.Location = new System.Drawing.Point(564, 160);
-            this.btnConvertir.Name = "btnConvertir";
-            this.btnConvertir.Size = new System.Drawing.Size(188, 33);
-            this.btnConvertir.TabIndex = 4;
-            this.btnConvertir.Text = "Convertir a binario";
-            this.btnConvertir.UseVisualStyleBackColor = true;
-            this.btnConvertir.Click += new System.EventHandler(this.btnConvertir_Click);
+            btnConvertir.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConvertir.Location = new Point(564, 160);
+            btnConvertir.Name = "btnConvertir";
+            btnConvertir.Size = new Size(188, 33);
+            btnConvertir.TabIndex = 4;
+            btnConvertir.Text = "Convertir a binario";
+            btnConvertir.UseVisualStyleBackColor = true;
+            btnConvertir.Click += btnConvertir_Click;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(136, 168);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Dato convertido:";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(136, 168);
+            label3.Name = "label3";
+            label3.Size = new Size(151, 25);
+            label3.TabIndex = 5;
+            label3.Text = "Dato convertido:";
             // 
             // lblResultado
             // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblResultado.Location = new System.Drawing.Point(52, 210);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(313, 40);
-            this.lblResultado.TabIndex = 6;
-            this.lblResultado.Text = "0000 0000 0000 0000";
+            lblResultado.AutoSize = true;
+            lblResultado.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblResultado.Location = new Point(52, 210);
+            lblResultado.Name = "lblResultado";
+            lblResultado.Size = new Size(313, 40);
+            lblResultado.TabIndex = 6;
+            lblResultado.Text = "0000 0000 0000 0000";
             // 
             // errorConversion
             // 
-            this.errorConversion.ContainerControl = this;
+            errorConversion.ContainerControl = this;
             // 
             // ConversionBin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 450);
-            this.Controls.Add(this.lblResultado);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnConvertir);
-            this.Controls.Add(this.cbTipoDato);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtDatoIngresado);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ConversionBin";
-            this.Text = "Form1";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDatoIngresado_KeyPress);
-            ((System.ComponentModel.ISupportInitialize)(this.errorConversion)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SlateGray;
+            ClientSize = new Size(858, 450);
+            Controls.Add(lblResultado);
+            Controls.Add(label3);
+            Controls.Add(btnConvertir);
+            Controls.Add(cbTipoDato);
+            Controls.Add(label2);
+            Controls.Add(txtDatoIngresado);
+            Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "ConversionBin";
+            Text = "Form1";
+            KeyPress += txtDatoIngresado_KeyPress;
+            ((System.ComponentModel.ISupportInitialize)errorConversion).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
