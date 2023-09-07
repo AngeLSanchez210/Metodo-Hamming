@@ -32,16 +32,17 @@ namespace Metodo_Hamming.Logica
             return resultado;
         }
 
-        public string ComplementoC1(string Binario)
+        public string ComplementoC1(string binario)
         {
-            char[] C1 = new char[Binario.Length];
+            char[] invertido = new char[binario.Length];
 
-            for (int i = 0; i < Binario.Length; i++)
+            for (int i = 0; i < binario.Length; i++)
             {
-                C1[i] = Binario[i] == '0' ? '1' : '0';
+                invertido[i] = binario[i] == '0' ? '1' : '0';
             }
 
-            return new string(C1);
+            string resultado = new string(invertido);
+            return resultado;
         }
         public string EnterosConSigno(string dato, string opcion)
         {
@@ -49,6 +50,7 @@ namespace Metodo_Hamming.Logica
             if (short.TryParse(dato, out numero))
             {
                 string conversion = ConversionBin(numero);
+                MessageBox.Show(conversion);
                 string resultado = DarFormato(conversion);
 
                 if (opcion == "Entero con signo (Bit mas representativo)")
@@ -58,8 +60,9 @@ namespace Metodo_Hamming.Logica
                 else
                 {
                     if (dato[0] == '-')
-                    {
-                        string complemento = ComplementoC1(conversion);
+                    {   
+                        string complemento = ComplementoC1(ConversionBin(ushort.Parse(dato.Substring(1))));
+                        MessageBox.Show(complemento);
                         resultado = DarFormato(complemento);
                         return resultado;
                     }
