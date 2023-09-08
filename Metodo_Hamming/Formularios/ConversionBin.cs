@@ -99,7 +99,7 @@ namespace Metodo_Hamming
                         break;
 
                     case "Flotante":
-                        resultado = Convertir.FloatToBinary(float.Parse(txtDatoIngresado.Text));
+                        resultado = Convertir.ConvertToHalfPrecision(float.Parse(txtDatoIngresado.Text));
                         if (resultado == "")
                         {
                             errorConversion.SetError(txtDatoIngresado, "El dato es de una dimension que no puede ser representada en 16 bits");
@@ -107,6 +107,7 @@ namespace Metodo_Hamming
                         else
                         {
                             lblResultado.Text = resultado;
+                            MessageBox.Show(Convertir.ConvertFromHalfPrecision(resultado).ToString());
                         }
                         break;
 
