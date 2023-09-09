@@ -39,6 +39,7 @@ namespace Metodo_Hamming
                 case "Caracter":
                     break;
                 case "Cadena de caracteres":
+                    break;
                 default:
                     errorConversion.SetError(cbTipoDato, "Seleccione el tipo de dato");
                     e.Handled = true;
@@ -107,7 +108,6 @@ namespace Metodo_Hamming
                         else
                         {
                             lblResultado.Text = resultado;
-                            MessageBox.Show(Convertir.ConvertirDeHalfPrecision(resultado).ToString());
                         }
                         break;
 
@@ -115,7 +115,7 @@ namespace Metodo_Hamming
                         resultado = Convertir.CaracterABinario(txtDatoIngresado.Text);
                         if (resultado == "")
                         {
-                            errorConversion.SetError(txtDatoIngresado, "El dato es de una dimension que no puede ser representada en 16 bits");
+                            errorConversion.SetError(txtDatoIngresado, "Ingrese solo un caracter");
                         }
                         else
                         {
@@ -124,15 +124,15 @@ namespace Metodo_Hamming
                         break;
 
                     case "Cadena de caracteres":
-                        //resultado = Convertir.CaracterABinario(txtDatoIngresado.Text);
-                        //if (resultado == "")
-                        //{
-                        //    errorConversion.SetError(txtDatoIngresado, "El dato es de una dimension que no puede ser representada en 16 bits");
-                        //}
-                        //else
-                        //{
-                        //    lblResultado.Text = resultado;
-                        //}
+                        resultado = Convertir.CadenaABinario(txtDatoIngresado.Text);
+                        if (resultado == "")
+                        {
+                            errorConversion.SetError(txtDatoIngresado, "La cadena es de una dimension que no puede ser representada en 16 bits (Dos caracter)");
+                        }
+                        else
+                        {
+                            lblResultado.Text = resultado;
+                        }
                         break;
 
                     default:

@@ -148,7 +148,7 @@ namespace Metodo_Hamming.Logica
             int bitsMedios = (medioSigno << 15) | (medioExponente << 10) | medioFraccion;
 
             // Convierte la representación entera a una cadena binaria de 16 caracteres y la devuelve
-            return Convert.ToString(bitsMedios, 2).PadLeft(16, '0');
+            return DarFormato(Convert.ToString(bitsMedios, 2).PadLeft(16, '0'));
         }
 
         public float ConvertirDeHalfPrecision(string binario)
@@ -183,29 +183,43 @@ namespace Metodo_Hamming.Logica
             return BitConverter.Int32BitsToSingle(bitsEnteros);
         }
 
-        public string CaracterABinario(char caracter)
+        public string CaracterABinario(string cadena)
         {
-            if (caracter > 127)
+            try
             {
-                throw new ArgumentException("El carácter no es ASCII estándar.");
+                char caracter = char.Parse(cadena);
+                if (caracter > 127)
+                {
+                    return "";
+                }
+                return Convert.ToString(caracter, 2).PadLeft(16, '0');
             }
-            return Convert.ToString(caracter, 2).PadLeft(16, '0');
+            catch (Exception)
+            {
+
+                return "";
+            }
         }
 
         public string CadenaABinario(string cadena)
         {
             StringBuilder resultado = new StringBuilder(cadena.Length * 16);
 
+            if (cadena.Length > 2)
+            {
+                return "";
+            }
+
             foreach (char caracter in cadena)
             {
                 if (caracter > 127)
                 {
-                    throw new ArgumentException("La cadena contiene un carácter que no es ASCII estándar.");
+                    return "";
                 }
-                resultado.Append(Convert.ToString(caracter, 2).PadLeft(16, '0'));
+                resultado.Append(Convert.ToString(caracter, 2).PadLeft(8, '0'));
             }
 
-            return resultado.ToString();
+            return DarFormato(resultado.ToString());
         }
     }
 }

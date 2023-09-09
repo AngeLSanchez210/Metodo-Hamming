@@ -62,26 +62,20 @@ namespace Metodo_Hamming.Logica
 
         public bool Texto(KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-                return true;
-            }
-            else if (char.IsControl(e.KeyChar))
+            if (char.IsControl(e.KeyChar))
             {
                 e.Handled = false;
                 return true;
             }
             else if (e.KeyChar == ' ')
             {
-                e.Handled = false;
-                return true;
-            }
-            else
-            {
                 e.Handled = true;
                 error.SetError(texto, "Ingrese solo letras");
                 return false;
+            }
+            else
+            {
+                return true;
             }
         }
 
