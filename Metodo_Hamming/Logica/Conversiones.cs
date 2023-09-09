@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Metodo_Hamming.Logica
 {
-    public class Conversiones /*Clase que contiene todas las conversiones de tipo de dato a binario
-                                y sus diferentes representaciones.*/
+    /*Clase que contiene todas las conversiones de tipo de dato a binari y sus diferentes representaciones.*/
+    public class Conversiones 
     {
         /*Metodo para convertir cualquier tipo de dato a un binario de 16 bits, recibe un parametro
         de tipo dynamic, este tipo de dato almecena cualquier tipo de dato desde un string a un flotante
@@ -24,230 +24,188 @@ namespace Metodo_Hamming.Logica
         con el fin de facilitar la lectura del binario resultante*/
         public string DarFormato(string conversion)
         {
+            // Formatea el string 'conversion' dividiendo en bloques de 4 caracteres separados por espacios.
             string resultado = string.Format("{0} {1} {2} {3}",
                 conversion.Substring(0, 4),
                 conversion.Substring(4, 4),
                 conversion.Substring(8, 4),
                 conversion.Substring(12, 4));
+
+            // Retorna el string formateado
             return resultado;
         }
 
+        /*Funcion que permite convertir un binario a su equivalente complemento 1*/
         public string ComplementoC1(string binario)
         {
+            // Crea un arreglo de caracteres del mismo tamaño que el string 'binario'
             char[] invertido = new char[binario.Length];
 
+            // Itera sobre cada carácter del string 'binario'
             for (int i = 0; i < binario.Length; i++)
             {
+                // Si el carácter actual es '0', coloca '1' en el arreglo 'invertido' y viceversa
                 invertido[i] = binario[i] == '0' ? '1' : '0';
             }
 
+            // Convierte el arreglo de caracteres 'invertido' de nuevo a un string
             string resultado = new string(invertido);
+
+            // Retorna el string invertido
             return resultado;
         }
+
+
+        /*Funcion que permite la con*/
         public string EnterosConSigno(string dato, string opcion)
         {
-            short numero;
-            if (short.TryParse(dato, out numero))
+            // Intenta convertir el dato (string) a un número de tipo short
+            if (short.TryParse(dato, out short numero))
             {
+                // Convierte el número (de tipo short) a su representación binaria (la función ConversionBin no está dada, pero asumo que convierte un número a su forma binaria)
                 string conversion = ConversionBin(numero);
-                MessageBox.Show(conversion);
-                string resultado = DarFormato(conversion);
 
+                // Si la opción especificada es "Entero con signo (Bit mas representativo)", simplemente regresa el número en formato binario
                 if (opcion == "Entero con signo (Bit mas representativo)")
                 {
-                    return resultado;
+                    return DarFormato(conversion);
                 }
-                else
+
+                // Si el dato tiene un signo negativo en su primera posición
+                if (dato[0] == '-')
                 {
-                    if (dato[0] == '-')
-                    {   
-                        string complemento = ComplementoC1(ConversionBin(ushort.Parse(dato.Substring(1))));
-                        MessageBox.Show(complemento);
-                        resultado = DarFormato(complemento);
-                        return resultado;
-                    }
-                    else
-                    {
-                        return resultado;
-                    }
+                    // Toma la parte numérica del dato (sin el signo), lo convierte a ushort, luego a binario y finalmente obtiene su complemento
+                    string complemento = ComplementoC1(ConversionBin(ushort.Parse(dato.Substring(1))));
+
+                    // Regresa el complemento en formato adecuado
+                    return DarFormato(complemento);
                 }
+
+                // Si ninguna de las condiciones anteriores se cumple, simplemente regresa el número en formato binario
+                return DarFormato(conversion);
             }
-            else
-            {
-                return "";
-            }
+
+            // Si el dato no puede ser convertido a un número de tipo short, regresa un string vacío
+            return "";
         }
 
         public string EnterosSinSigno(string dato)
         {
-            ushort numero;
-            if (ushort.TryParse(dato, out numero))
+            // Intenta convertir el dato (string) a un número de tipo ushort (sin signo)
+            if (ushort.TryParse(dato, out ushort numero))
             {
+                // Convierte el número (de tipo ushort) a su representación binaria 
                 string conversion = ConversionBin(numero);
-                string resultado = DarFormato(conversion);
-                return resultado;
+
+                // Retorna el número convertido a binario en un formato específico (dividido en bloques de 4 caracteres separados por espacios)
+                return DarFormato(conversion);
             }
-            else
-            {
-                return "";
-            }
+
+            // Si el dato no puede ser convertido a un número de tipo ushort, regresa un string vacío
+            return "";
         }
 
-        //public string FloatToBinary(float number)
-        //{
-        //    int integerPart = (int)number;
-        //    float fractionalPart = number - integerPart;
 
-        //    string integerBinary = Convert.ToString(integerPart, 2);
-
-        //    string fractionalBinary = "";
-        //    while (fractionalPart > 0 && fractionalBinary.Length < 10)
-        //    {
-        //        fractionalPart *= 2;
-        //        int fractionalBit = (int)fractionalPart;
-        //        fractionalBinary += fractionalBit;
-        //        fractionalPart -= fractionalBit;
-        //    }
-
-        //    return integerBinary + "." + fractionalBinary;
-        //}
-
-        //public string Flotantes(float value)
-        //{
-        //    // Paso 1: Casos especiales (NaN, Infinito, -Infinito, 0)
-        //    if (float.IsNaN(value))
-        //        return "0111111111110000";  // Representación estándar de NaN en 16 bits
-        //    if (float.IsPositiveInfinity(value))
-        //        return "0111110000000000";  // Representación estándar de Infinito en 16 bits
-        //    if (float.IsNegativeInfinity(value))
-        //        return "1111110000000000";  // Representación estándar de -Infinito en 16 bits
-        //    if (value == 0)
-        //        return "0000000000000000";  // Representación estándar de 0 en 16 bits
-
-        //    // Paso 2: Determinar el signo
-        //    string sign = value < 0 ? "1" : "0";
-        //    value = Math.Abs(value);
-
-        //    // Paso 3: Convertir la parte entera y decimal a binario
-        //    int integerPart = (int)value;
-        //    float decimalPart = value - integerPart;
-
-        //    string binaryInteger = Convert.ToString(integerPart, 2);
-        //    string binaryDecimal = "";
-
-        //    for (int i = 0; i < 23; i++)  // Usamos más bits para obtener una representación más precisa que luego se redondeará
-        //    {
-        //        decimalPart *= 2;
-        //        int bit = (int)decimalPart;
-        //        binaryDecimal += bit.ToString();
-        //        decimalPart -= bit;
-        //    }
-
-        //    string binaryRepresentation = binaryInteger + "." + binaryDecimal;
-
-        //    // Paso 4: Normalizar el número
-        //    int normalizedExponent;
-        //    if (integerPart != 0)
-        //    {
-        //        normalizedExponent = binaryInteger.Length - 1;
-        //    }
-        //    else
-        //    {
-        //        normalizedExponent = -binaryDecimal.IndexOf("1") - 1;
-        //    }
-
-        //    // Paso 5: Calcular el exponente con sesgo de 15
-        //    int biasedExponent = normalizedExponent + 15;
-        //    string exponentRepresentation;
-
-        //    if (biasedExponent <= 0) // Número subnormal
-        //    {
-        //        exponentRepresentation = "00000";
-        //    }
-        //    else if (biasedExponent >= 31) // Overflow, considerado infinito
-        //    {
-        //        return sign == "1" ? "1111110000000000" : "0111110000000000";
-        //    }
-        //    else
-        //    {
-        //        exponentRepresentation = Convert.ToString(biasedExponent, 2).PadLeft(5, '0');
-        //    }
-
-        //    // Paso 6: Representar el número en formato IEEE 754 de 16 bits
-        //    string mantissa;
-        //    if (integerPart != 0)
-        //    {
-        //        // La mantisa toma el bit implícito (el bit a la izquierda del punto) y los bits que siguen
-        //        mantissa = binaryRepresentation.Split('.')[1].Substring(0, 10);
-        //    }
-        //    else
-        //    {
-        //        // Tomar los bits después del primer 1 encontrado en la representación binaria
-        //        mantissa = binaryDecimal.Substring(binaryDecimal.IndexOf("1") + 1, 10);
-        //    }
-
-        //    string ieee754Representation = sign + exponentRepresentation + mantissa;
-
-        //    return ieee754Representation;
-        //}
-
-        public string ConvertToHalfPrecision(float value)
+        public string ConvertirAHalfPrecision(float valor)
         {
-            if (value < -2048 || value > 2048)
+            // Convierte directamente el valor flotante a una representación entera de 32 bits
+            int bitsEnteros = BitConverter.SingleToInt32Bits(valor);
+
+            // Si el valor está fuera del rango permitido para la representación de media precisión, devuelve una cadena vacía
+            if (valor < -2048 || valor > 2048)
             {
                 return "";
             }
 
-            int intBits = BitConverter.ToInt32(BitConverter.GetBytes(value), 0);
-            int s = (intBits >> 31) & 0x1;
-            int e = (intBits >> 23) & 0xFF;
-            int f = intBits & 0x7FFFFF;
+            // Extrae el bit de signo del valor flotante
+            int signo = (bitsEnteros >> 31) & 0x1;
+            // Extrae el exponente (8 bits) del valor flotante
+            int exponente = (bitsEnteros >> 23) & 0xFF;
+            // Extrae la fracción (23 bits) del valor flotante
+            int fraccion = bitsEnteros & 0x7FFFFF;
 
-            int halfS = s;
-            int halfE = e - 127 + 15;  // Ajuste del exponente al formato half-precision
-            int halfF = f >> 13;      // Solo tomamos los 10 bits más significativos
+            // El bit de signo para la media precisión es el mismo que el bit de signo del valor flotante
+            int medioSigno = signo;
+            // Ajusta el exponente para la representación de media precisión
+            int medioExponente = exponente - 127 + 15;
+            // Solo toma los 10 bits más significativos de la fracción para la representación de media precisión
+            int medioFraccion = fraccion >> 13;
 
-            if (halfE <= 0)  // Underflow
+            // En caso de subflujo (underflow), ajusta el exponente y la fracción a 0
+            if (medioExponente <= 0)
             {
-                halfE = 0;
-                halfF = 0;
+                medioExponente = 0;
+                medioFraccion = 0;
             }
-            else if (halfE >= 31)  // Overflow
+            // En caso de sobre flujo (overflow), ajusta el exponente a 31 y la fracción a 0
+            else if (medioExponente >= 31)
             {
-                halfE = 31;
-                halfF = 0;
+                medioExponente = 31;
+                medioFraccion = 0;
             }
 
-            int halfBits = (halfS << 15) | (halfE << 10) | halfF;
+            // Combina el bit de signo, el exponente y la fracción en una representación entera de 16 bits
+            int bitsMedios = (medioSigno << 15) | (medioExponente << 10) | medioFraccion;
 
-            char[] bits = new char[16];
-            for (int i = 0; i < 16; i++)
-            {
-                bits[15 - i] = (halfBits & (1 << i)) != 0 ? '1' : '0';
-            }
-
-            return new string(bits);
+            // Convierte la representación entera a una cadena binaria de 16 caracteres y la devuelve
+            return Convert.ToString(bitsMedios, 2).PadLeft(16, '0');
         }
 
-        public float ConvertFromHalfPrecision(string binary)
+        public float ConvertirDeHalfPrecision(string binario)
         {
-            if (binary.Length != 16)
+            // Verifica que la cadena tenga exactamente 16 caracteres, en caso contrario, lanza una excepción
+            if (binario.Length != 16)
             {
                 throw new ArgumentException("La cadena binaria debe tener 16 bits.");
             }
 
-            int halfBits = Convert.ToInt32(binary, 2);
-            int halfS = (halfBits >> 15) & 0x1;
-            int halfE = (halfBits >> 10) & 0x1F;
-            int halfF = halfBits & 0x3FF;
+            // Convierte la cadena binaria a un valor entero
+            int bitsMedios = Convert.ToInt32(binario, 2);
 
-            int s = halfS;
-            int e = (halfE == 0) ? 0 : halfE + 127 - 15;
-            int f = halfF << 13;
+            // Extrae el bit de signo de la representación de media precisión
+            int medioSigno = (bitsMedios >> 15) & 0x1;
+            // Extrae el exponente (5 bits) de la representación de media precisión
+            int medioExponente = (bitsMedios >> 10) & 0x1F;
+            // Extrae la fracción (10 bits) de la representación de media precisión
+            int medioFraccion = bitsMedios & 0x3FF;
 
-            int intBits = (s << 31) | (e << 23) | f;
+            // El bit de signo para la precisión simple es el mismo que el bit de signo de la media precisión
+            int signo = medioSigno;
+            // Ajusta el exponente para la representación de precisión simple
+            int exponente = (medioExponente == 0) ? 0 : medioExponente + 127 - 15;
+            // Ajusta la fracción para la representación de precisión simple (toma los 10 bits y los desplaza a la posición correcta)
+            int fraccion = medioFraccion << 13;
 
-            return BitConverter.ToSingle(BitConverter.GetBytes(intBits), 0);
+            // Combina el bit de signo, el exponente y la fracción en una representación entera de 32 bits
+            int bitsEnteros = (signo << 31) | (exponente << 23) | fraccion;
+
+            // Convierte la representación entera a un valor flotante y lo devuelve
+            return BitConverter.Int32BitsToSingle(bitsEnteros);
+        }
+
+        public string CaracterABinario(char caracter)
+        {
+            if (caracter > 127)
+            {
+                throw new ArgumentException("El carácter no es ASCII estándar.");
+            }
+            return Convert.ToString(caracter, 2).PadLeft(16, '0');
+        }
+
+        public string CadenaABinario(string cadena)
+        {
+            StringBuilder resultado = new StringBuilder(cadena.Length * 16);
+
+            foreach (char caracter in cadena)
+            {
+                if (caracter > 127)
+                {
+                    throw new ArgumentException("La cadena contiene un carácter que no es ASCII estándar.");
+                }
+                resultado.Append(Convert.ToString(caracter, 2).PadLeft(16, '0'));
+            }
+
+            return resultado.ToString();
         }
     }
 }

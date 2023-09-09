@@ -99,7 +99,7 @@ namespace Metodo_Hamming
                         break;
 
                     case "Flotante":
-                        resultado = Convertir.ConvertToHalfPrecision(float.Parse(txtDatoIngresado.Text));
+                        resultado = Convertir.ConvertirAHalfPrecision(float.Parse(txtDatoIngresado.Text));
                         if (resultado == "")
                         {
                             errorConversion.SetError(txtDatoIngresado, "El dato es de una dimension que no puede ser representada en 16 bits");
@@ -107,14 +107,32 @@ namespace Metodo_Hamming
                         else
                         {
                             lblResultado.Text = resultado;
-                            MessageBox.Show(Convertir.ConvertFromHalfPrecision(resultado).ToString());
+                            MessageBox.Show(Convertir.ConvertirDeHalfPrecision(resultado).ToString());
                         }
                         break;
 
                     case "Caracter":
+                        resultado = Convertir.CaracterABinario(txtDatoIngresado.Text);
+                        if (resultado == "")
+                        {
+                            errorConversion.SetError(txtDatoIngresado, "El dato es de una dimension que no puede ser representada en 16 bits");
+                        }
+                        else
+                        {
+                            lblResultado.Text = resultado;
+                        }
                         break;
 
                     case "Cadena de caracteres":
+                        //resultado = Convertir.CaracterABinario(txtDatoIngresado.Text);
+                        //if (resultado == "")
+                        //{
+                        //    errorConversion.SetError(txtDatoIngresado, "El dato es de una dimension que no puede ser representada en 16 bits");
+                        //}
+                        //else
+                        //{
+                        //    lblResultado.Text = resultado;
+                        //}
                         break;
 
                     default:
