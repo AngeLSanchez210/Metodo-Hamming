@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Metodo_Hamming.Logica
 {
     /*Clase que contiene todas las conversiones de tipo de dato a binari y sus diferentes representaciones.*/
-    public class Conversiones 
+    public class Conversiones
     {
         /*Metodo para convertir cualquier tipo de dato a un binario de 16 bits, recibe un parametro
         de tipo dynamic, este tipo de dato almecena cualquier tipo de dato desde un string a un flotante
@@ -56,7 +56,8 @@ namespace Metodo_Hamming.Logica
         }
 
 
-        /*Funcion que permite la con*/
+        /*Funcion que permite la convertir enteros con signo a su equivalente en
+         bit mas significativo o tambien llamado complemento a2*/
         public string EnterosConSigno(string dato, string opcion)
         {
             // Intenta convertir el dato (string) a un número de tipo short
@@ -89,6 +90,7 @@ namespace Metodo_Hamming.Logica
             return "";
         }
 
+        /*Funcion para cpnvertir enteros sin signo a binario*/
         public string EnterosSinSigno(string dato)
         {
             // Intenta convertir el dato (string) a un número de tipo ushort (sin signo)
@@ -105,7 +107,8 @@ namespace Metodo_Hamming.Logica
             return "";
         }
 
-
+        /*Funcion para convertir un flotante a precision media o halfPrecision que 
+         hace referencia al estandar IEE754 pero aplicado a 16 bits*/
         public string ConvertirAHalfPrecision(float valor)
         {
             // Convierte directamente el valor flotante a una representación entera de 32 bits
@@ -151,6 +154,7 @@ namespace Metodo_Hamming.Logica
             return DarFormato(Convert.ToString(bitsMedios, 2).PadLeft(16, '0'));
         }
 
+        /*Funcion para convertir a de flotantes de una precision medio o halfPrecision a flotantes*/
         public float ConvertirDeHalfPrecision(string binario)
         {
             // Verifica que la cadena tenga exactamente 16 caracteres, en caso contrario, lanza una excepción
@@ -183,43 +187,61 @@ namespace Metodo_Hamming.Logica
             return BitConverter.Int32BitsToSingle(bitsEnteros);
         }
 
+        /*Funcion para convertir una cadena a binario usando ASCIIZ*/
+        public string CadenaABinario(string cadena)
+        {
+            // Si la longitud de la cadena es mayor que 2, retorna una cadena vacía.
+            if (cadena.Length > 2 || cadena.Length <=1)
+            {
+                return "";
+            }
+
+            // Crea un StringBuilder con capacidad inicial basada en el tamaño esperado de la representación binaria de la cadena.
+            StringBuilder resultado = new StringBuilder(cadena.Length * 16);
+
+            // Itera sobre cada carácter de la cadena.
+            foreach (char caracter in cadena)
+            {
+                // Si el valor numérico del carácter es mayor que 127, retorna una cadena vacía.
+                if (caracter > 127)
+                {
+                    return "";
+                }
+
+                // Convierte el carácter a su representación binaria y rellena a la izquierda con '0' hasta llegar a 8 dígitos.
+                // Luego, añade esta representación al StringBuilder.
+                resultado.Append(Convert.ToString(caracter, 2).PadLeft(8, '0'));
+            }
+
+            // Convierte el StringBuilder a string y le da formato antes de retornar el valor.
+            //Se añade el byte nulo (16 bits de 0) para la terminación asciiz.
+            return DarFormato(resultado.ToString()) + " 0000000000000000";
+        }
+
+        /*Funcion para convertir un caracter a binario usando ASCIIZ*/
         public string CaracterABinario(string cadena)
         {
             try
             {
+                // Parsea la cadena para obtener el primer carácter.
                 char caracter = char.Parse(cadena);
+
+                // Si el valor numérico del carácter es mayor que 127, retorna una cadena vacía.
                 if (caracter > 127)
                 {
                     return "";
                 }
-                return Convert.ToString(caracter, 2).PadLeft(16, '0');
-            }
-            catch (Exception)
-            {
 
+                // Convierte el carácter a su representación binaria y rellena a la izquierda con '0' hasta llegar a 16 dígitos.
+                //Se añade el byte nulo (16 bits de 0) para la terminación asciiz.
+                return DarFormato(Convert.ToString(caracter, 2).PadLeft(16, '0')) + " 0000000000000000";
+            }
+            catch (Exception) // Atrapa cualquier excepción.
+            {
+                // Si ocurre alguna excepción, retorna una cadena vacía.
                 return "";
             }
         }
 
-        public string CadenaABinario(string cadena)
-        {
-            StringBuilder resultado = new StringBuilder(cadena.Length * 16);
-
-            if (cadena.Length > 2)
-            {
-                return "";
-            }
-
-            foreach (char caracter in cadena)
-            {
-                if (caracter > 127)
-                {
-                    return "";
-                }
-                resultado.Append(Convert.ToString(caracter, 2).PadLeft(8, '0'));
-            }
-
-            return DarFormato(resultado.ToString());
-        }
     }
 }

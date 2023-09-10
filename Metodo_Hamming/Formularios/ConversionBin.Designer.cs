@@ -80,9 +80,9 @@
             "Entero sin signo",
             "Entero con signo (Complemento 1)",
             "Entero con signo (Bit mas representativo)",
-            "Flotante",
-            "Caracter",
-            "Cadena de caracteres"});
+            "Flotante (Estandar IEEE754 para 16 bits)",
+            "Caracter (Codificacion ASCIIZ)",
+            "Cadena de caracteres (Codificacion ASCIIZ)"});
             this.cbTipoDato.Location = new System.Drawing.Point(36, 99);
             this.cbTipoDato.Name = "cbTipoDato";
             this.cbTipoDato.Size = new System.Drawing.Size(374, 33);

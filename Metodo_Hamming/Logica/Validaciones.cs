@@ -8,20 +8,25 @@ namespace Metodo_Hamming.Logica
 {
     public class Validaciones
     {
+        // Declaraciones de variables miembro para gestionar errores y controles de interfaz.
         ErrorProvider error;
         TextBox texto;
         ComboBox combo;
 
+        // Constructor que inicializa las variables miembro.
         public Validaciones(ErrorProvider error, TextBox texto, ComboBox combo)
         {
-            this.error = error;
-            this.texto = texto;
-            this.combo = combo;
+            this.error = error;  // Inicializa el ErrorProvider.
+            this.texto = texto;  // Inicializa el TextBox.
+            this.combo = combo;  // Inicializa el ComboBox.
         }
 
+        // Método que valida si la entrada es un número flotante.
         public bool Flotantes(KeyPressEventArgs e, string texto)
         {
             int banderaPunto = 0;
+
+            // Verifica cuántos puntos hay en el texto.
             foreach (char c in texto)
             {
                 if (c == '.')
@@ -30,19 +35,22 @@ namespace Metodo_Hamming.Logica
                 }
             }
 
+            // Valida si el carácter es un dígito.
             if (char.IsDigit(e.KeyChar))
             {
                 e.Handled = false;
                 return true;
             }
+            // Valida si el carácter es un control (por ej., backspace).
             else if (char.IsControl(e.KeyChar))
             {
                 e.Handled = false;
                 return true;
             }
+            // Valida si el carácter es un punto.
             else if (e.KeyChar == '.')
             {
-                if (banderaPunto == 1)
+                if (banderaPunto == 1)  // Si ya hay un punto.
                 {
                     e.Handled = true;
                     return false;
@@ -53,13 +61,14 @@ namespace Metodo_Hamming.Logica
                     return true;
                 }
             }
-            else
+            else  // Otros caracteres no permitidos.
             {
                 e.Handled = true;
                 return false;
             }
         }
 
+        // Método que valida si la entrada es un texto.
         public bool Texto(KeyPressEventArgs e)
         {
             if (char.IsControl(e.KeyChar))
@@ -67,10 +76,10 @@ namespace Metodo_Hamming.Logica
                 e.Handled = false;
                 return true;
             }
-            else if (e.KeyChar == ' ')
+            else if (e.KeyChar == ' ')  // Espacios no permitidos.
             {
                 e.Handled = true;
-                error.SetError(texto, "Ingrese solo letras");
+                error.SetError(texto, "Ingrese solo caracteres que no sean nulos");
                 return false;
             }
             else
@@ -79,9 +88,12 @@ namespace Metodo_Hamming.Logica
             }
         }
 
+        // Método que valida si la entrada es un número flotante, mostrando un mensaje de error si no es válido.
         public bool NumerosFlotantes(KeyPressEventArgs e, string cadena)
         {
             int banderaPunto = 0;
+
+            // Verifica cuántos puntos hay en el texto.
             foreach (char c in cadena)
             {
                 if (c == '.')
@@ -116,10 +128,12 @@ namespace Metodo_Hamming.Logica
             else
             {
                 e.Handled = true;
+                error.SetError(texto, "Ingrese solo numeros y .");
                 return false;
             }
         }
 
+        // Método que valida si la entrada es un número sin signo.
         public bool NumerosSinSigno(KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar))
@@ -140,9 +154,12 @@ namespace Metodo_Hamming.Logica
             }
         }
 
+        // Método que valida si la entrada es un número con signo.
         public bool NumerosConSigno(KeyPressEventArgs e, TextBox cadena)
         {
             int banderaSigno = 0;
+
+            // Verifica cuántos signos negativos hay en el texto.
             foreach (char c in cadena.Text)
             {
                 if (c == '-')
@@ -163,12 +180,12 @@ namespace Metodo_Hamming.Logica
             }
             else if (e.KeyChar == '-')
             {
-                if (banderaSigno == 1)
+                if (banderaSigno == 1)  // Si ya hay un signo.
                 {
                     e.Handled = true;
                     return false;
                 }
-                else if (cadena.SelectionStart == 0)
+                else if (cadena.SelectionStart == 0)  // Si es el primer carácter.
                 {
                     e.Handled = false;
                     return true;
@@ -179,12 +196,13 @@ namespace Metodo_Hamming.Logica
                     return false;
                 }
             }
-            else
+            else  // Otros caracteres no permitidos.
             {
                 e.Handled = true;
-                error.SetError(texto, "Ingrese solo numeros y signo el signo '-'");
+                error.SetError(texto, "Ingrese solo numeros y el signo '-'");
                 return false;
             }
         }
     }
+
 }
