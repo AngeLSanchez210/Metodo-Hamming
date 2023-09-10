@@ -49,7 +49,7 @@ namespace Metodo_Hamming
                     break;
                 case "Flotante (Estandar IEEE754 para 16 bits)":
                     // Valida si la entrada es un número flotante.
-                    Validar.NumerosFlotantes(e, txtDatoIngresado.Text);
+                    Validar.NumerosFlotantes(e, txtDatoIngresado.Text,txtDatoIngresado);
                     break;
                 case "Caracter (Codificacion ASCIIZ)":
                     // Valida si la entrada es un carácter.

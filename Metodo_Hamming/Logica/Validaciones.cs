@@ -21,53 +21,6 @@ namespace Metodo_Hamming.Logica
             this.combo = combo;  // Inicializa el ComboBox.
         }
 
-        // Método que valida si la entrada es un número flotante.
-        public bool Flotantes(KeyPressEventArgs e, string texto)
-        {
-            int banderaPunto = 0;
-
-            // Verifica cuántos puntos hay en el texto.
-            foreach (char c in texto)
-            {
-                if (c == '.')
-                {
-                    banderaPunto++;
-                }
-            }
-
-            // Valida si el carácter es un dígito.
-            if (char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-                return true;
-            }
-            // Valida si el carácter es un control (por ej., backspace).
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-                return true;
-            }
-            // Valida si el carácter es un punto.
-            else if (e.KeyChar == '.')
-            {
-                if (banderaPunto == 1)  // Si ya hay un punto.
-                {
-                    e.Handled = true;
-                    return false;
-                }
-                else
-                {
-                    e.Handled = false;
-                    return true;
-                }
-            }
-            else  // Otros caracteres no permitidos.
-            {
-                e.Handled = true;
-                return false;
-            }
-        }
-
         // Método que valida si la entrada es un texto.
         public bool Texto(KeyPressEventArgs e)
         {
@@ -89,12 +42,13 @@ namespace Metodo_Hamming.Logica
         }
 
         // Método que valida si la entrada es un número flotante, mostrando un mensaje de error si no es válido.
-        public bool NumerosFlotantes(KeyPressEventArgs e, string cadena)
+        public bool NumerosFlotantes(KeyPressEventArgs e, string cadena1, TextBox cadena)
         {
             int banderaPunto = 0;
+            int banderaSigno = 0;
 
             // Verifica cuántos puntos hay en el texto.
-            foreach (char c in cadena)
+            foreach (char c in cadena1)
             {
                 if (c == '.')
                 {
@@ -123,6 +77,24 @@ namespace Metodo_Hamming.Logica
                 {
                     e.Handled = false;
                     return true;
+                }
+            }
+            else if (e.KeyChar == '-')
+            {
+                if (banderaSigno == 1)  // Si ya hay un signo.
+                {
+                    e.Handled = true;
+                    return false;
+                }
+                else if (cadena.SelectionStart == 0)  // Si es el primer carácter.
+                {
+                    e.Handled = false;
+                    return true;
+                }
+                else
+                {
+                    e.Handled = true;
+                    return false;
                 }
             }
             else
