@@ -13,7 +13,7 @@ namespace Metodo_Hamming.Logica
         TextBox texto;
         ComboBox combo;
 
-        // Constructor que inicializa las variables miembro.
+        // Constructor que inicializa las variables de la clase.
         public Validaciones(ErrorProvider error, TextBox texto, ComboBox combo)
         {
             this.error = error;  // Inicializa el ErrorProvider.

@@ -23,7 +23,7 @@ namespace Metodo_Hamming
             Validar = new(errorConversion, txtDatoIngresado, cbTipoDato);
         }
 
-        // Manejador del evento de presión de tecla en el control 'txtDatoIngresado'.
+        // Manejador del evento de presiionar una tecla en el control 'txtDatoIngresado'.
         private void txtDatoIngresado_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Limpia los mensajes de error de todos los controles en el formulario.
@@ -175,6 +175,7 @@ namespace Metodo_Hamming
                     case "Cadena de caracteres (Codificacion ASCIIZ)":
                         resultado = Convertir.CadenaABinario(txtDatoIngresado.Text);
 
+                        //Si la dimension de la cadena es de un caracter se manda un error
                         if (txtDatoIngresado.Text.Length <= 1)
                         {
                             errorConversion.SetError(txtDatoIngresado, "Esta opcion es para una cadena, si desea representar un caracter seleccione la opcion Caracter");
