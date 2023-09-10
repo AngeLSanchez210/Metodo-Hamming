@@ -28,115 +28,129 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            txtBits = new TextBox();
-            btnEnviar = new Button();
-            label2 = new Label();
-            lblNumeroCodi = new Label();
-            lblErrorInput = new Label();
-            label3 = new Label();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBits = new System.Windows.Forms.TextBox();
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblNumeroCodi = new System.Windows.Forms.Label();
+            this.lblErrorInput = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(80, 103);
-            label1.Name = "label1";
-            label1.Size = new Size(252, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Ingrese un numero de 6 bits:";
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(80, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(252, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Ingrese un numero de 6 bits:";
             // 
             // txtBits
             // 
-            txtBits.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            txtBits.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBits.Location = new Point(360, 99);
-            txtBits.MaximumSize = new Size(204, 33);
-            txtBits.MaxLength = 6;
-            txtBits.Name = "txtBits";
-            txtBits.Size = new Size(204, 33);
-            txtBits.TabIndex = 1;
-            txtBits.KeyPress += txtBits_KeyPress;
+            this.txtBits.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtBits.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBits.Location = new System.Drawing.Point(360, 99);
+            this.txtBits.MaximumSize = new System.Drawing.Size(204, 33);
+            this.txtBits.MaxLength = 6;
+            this.txtBits.Name = "txtBits";
+            this.txtBits.PlaceholderText = "Ej: 01010101";
+            this.txtBits.Size = new System.Drawing.Size(204, 33);
+            this.txtBits.TabIndex = 1;
+            this.txtBits.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBits_KeyPress);
             // 
             // btnEnviar
             // 
-            btnEnviar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnEnviar.AutoSize = true;
-            btnEnviar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEnviar.Location = new Point(588, 97);
-            btnEnviar.MaximumSize = new Size(115, 35);
-            btnEnviar.Name = "btnEnviar";
-            btnEnviar.Size = new Size(115, 35);
-            btnEnviar.TabIndex = 2;
-            btnEnviar.Text = "Codificar";
-            btnEnviar.UseVisualStyleBackColor = true;
-            btnEnviar.Click += btnEnviar_Click;
+            this.btnEnviar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnviar.AutoSize = true;
+            this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEnviar.Location = new System.Drawing.Point(588, 97);
+            this.btnEnviar.MaximumSize = new System.Drawing.Size(115, 35);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(115, 35);
+            this.btnEnviar.TabIndex = 2;
+            this.btnEnviar.Text = "Codificar";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(360, 203);
-            label2.Name = "label2";
-            label2.Size = new Size(202, 30);
-            label2.TabIndex = 3;
-            label2.Text = "Numero codificado: ";
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(360, 203);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(202, 30);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Numero codificado: ";
             // 
             // lblNumeroCodi
             // 
-            lblNumeroCodi.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lblNumeroCodi.AutoSize = true;
-            lblNumeroCodi.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNumeroCodi.Location = new Point(338, 261);
-            lblNumeroCodi.Name = "lblNumeroCodi";
-            lblNumeroCodi.Size = new Size(224, 37);
-            lblNumeroCodi.TabIndex = 4;
-            lblNumeroCodi.Text = " 0 0 0 0 0 0 0 0 0";
+            this.lblNumeroCodi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNumeroCodi.AutoSize = true;
+            this.lblNumeroCodi.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNumeroCodi.Location = new System.Drawing.Point(338, 261);
+            this.lblNumeroCodi.Name = "lblNumeroCodi";
+            this.lblNumeroCodi.Size = new System.Drawing.Size(224, 37);
+            this.lblNumeroCodi.TabIndex = 4;
+            this.lblNumeroCodi.Text = " 0 0 0 0 0 0 0 0 0";
             // 
             // lblErrorInput
             // 
-            lblErrorInput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lblErrorInput.AutoSize = true;
-            lblErrorInput.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblErrorInput.ForeColor = Color.Red;
-            lblErrorInput.Location = new Point(360, 132);
-            lblErrorInput.Name = "lblErrorInput";
-            lblErrorInput.Size = new Size(0, 20);
-            lblErrorInput.TabIndex = 5;
+            this.lblErrorInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblErrorInput.AutoSize = true;
+            this.lblErrorInput.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblErrorInput.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorInput.Location = new System.Drawing.Point(360, 135);
+            this.lblErrorInput.Name = "lblErrorInput";
+            this.lblErrorInput.Size = new System.Drawing.Size(0, 20);
+            this.lblErrorInput.TabIndex = 5;
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(300, 9);
-            label3.Name = "label3";
-            label3.Size = new Size(293, 37);
-            label3.TabIndex = 6;
-            label3.Text = "Metodo de Hamming";
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(300, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(293, 37);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Metodo de Hamming";
             // 
             // Hamming
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SlateGray;
-            ClientSize = new Size(891, 543);
-            Controls.Add(label3);
-            Controls.Add(lblErrorInput);
-            Controls.Add(lblNumeroCodi);
-            Controls.Add(label2);
-            Controls.Add(btnEnviar);
-            Controls.Add(txtBits);
-            Controls.Add(label1);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "Hamming";
-            Text = "Hamming";
-            Load += Hamming_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(891, 543);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblErrorInput);
+            this.Controls.Add(this.lblNumeroCodi);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnEnviar);
+            this.Controls.Add(this.txtBits);
+            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Hamming";
+            this.Text = "Hamming";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

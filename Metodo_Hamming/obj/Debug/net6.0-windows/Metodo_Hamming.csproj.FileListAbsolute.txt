@@ -53,5 +53,5 @@ C:\Users\angel\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windo
 C:\Users\angel\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\ref\Metodo_Hamming.dll
 C:\Users\angel\source\repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.Pariedad.resources
 C:\Users\Isaac\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.ConversionBin.resources
-C:\Users\Isaac\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.Pariedad.resources
 C:\Users\angel\Source\Repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.ConversionBin.resources
+C:\Users\Isaac\source\repos\Metodo-Hamming\Metodo_Hamming\obj\Debug\net6.0-windows\Metodo_Hamming.Paridad.resources

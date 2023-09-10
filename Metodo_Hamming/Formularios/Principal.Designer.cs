@@ -28,129 +28,130 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            label1 = new Label();
-            panel2 = new Panel();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            mostrar = new Panel();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.mostrar = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.MenuHighlight;
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1034, 80);
-            panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
+            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1034, 80);
+            this.panel1.TabIndex = 0;
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 27.7499962F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(341, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(433, 42);
-            label1.TabIndex = 0;
-            label1.Text = "METODO DE HAMMING";
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(341, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(433, 42);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "METODO DE HAMMING";
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.MenuHighlight;
-            panel2.Controls.Add(button3);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 80);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(143, 543);
-            panel2.TabIndex = 1;
+            this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 80);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(143, 543);
+            this.panel2.TabIndex = 1;
             // 
             // button3
             // 
-            button3.BackColor = SystemColors.MenuHighlight;
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 160, 215);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Unispace", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(-11, 240);
-            button3.Name = "button3";
-            button3.Size = new Size(162, 85);
-            button3.TabIndex = 4;
-            button3.Text = "Pariedad";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click_1;
+            this.button3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(215)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Location = new System.Drawing.Point(-11, 240);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(162, 85);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Paridad";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // button2
             // 
-            button2.BackColor = SystemColors.MenuHighlight;
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 160, 215);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Unispace", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(-11, 149);
-            button2.Name = "button2";
-            button2.Size = new Size(162, 85);
-            button2.TabIndex = 3;
-            button2.Text = "Metodo de Hammig";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(215)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(-11, 149);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(162, 85);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Metodo de Hammig";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.MenuHighlight;
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 160, 215);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Unispace", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(-11, 65);
-            button1.Name = "button1";
-            button1.Size = new Size(162, 78);
-            button1.TabIndex = 2;
-            button1.Text = "Conversion";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(215)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(-11, 65);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(162, 78);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Conversion";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // mostrar
             // 
-            mostrar.BackColor = Color.SlateGray;
-            mostrar.Dock = DockStyle.Fill;
-            mostrar.Location = new Point(143, 80);
-            mostrar.Name = "mostrar";
-            mostrar.Size = new Size(891, 543);
-            mostrar.TabIndex = 2;
-            mostrar.Paint += mostrar_Paint;
+            this.mostrar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.mostrar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mostrar.Location = new System.Drawing.Point(143, 80);
+            this.mostrar.Name = "mostrar";
+            this.mostrar.Size = new System.Drawing.Size(891, 543);
+            this.mostrar.TabIndex = 2;
             // 
             // Principal
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1034, 623);
-            Controls.Add(mostrar);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            ForeColor = SystemColors.ActiveCaptionText;
-            Name = "Principal";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Conversor a binario y codificador metodo de hamming";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1034, 623);
+            this.Controls.Add(this.mostrar);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Name = "Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Conversor a binario y codificador metodo de hamming";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

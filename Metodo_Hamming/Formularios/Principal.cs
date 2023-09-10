@@ -69,7 +69,7 @@ namespace Metodo_Hamming
             button1.BackColor = Color.FromArgb(0, 120, 215);
             button2.BackColor = Color.FromArgb(0, 120, 215);
             mostrar.Controls.Clear();
-            Pariedad conver = new Pariedad();
+            Paridad conver = new Paridad();
             conver.TopLevel = false;
             mostrar.Controls.Add(conver);
             conver.Dock = DockStyle.Fill;

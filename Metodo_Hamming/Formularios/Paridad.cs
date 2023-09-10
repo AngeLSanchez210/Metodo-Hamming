@@ -11,10 +11,10 @@ using Metodo_Hamming.Logica;
 
 namespace Metodo_Hamming
 {
-    public partial class Pariedad : Form
+    public partial class Paridad : Form
 
     {
-        public Pariedad()
+        public Paridad()
         {
             InitializeComponent();
         }
